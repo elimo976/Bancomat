@@ -18,12 +18,12 @@ export class AssegniComponent implements OnInit {
 
     this.formGroup = this.fb.group({
       campo1: ['', [Validators.required,Validators.pattern('[0-9]+')]],
-      campo2: ['', [Validators.required, Validators.pattern('^[0-9a-zA-Z]+$')]],
+      campo2: ['', [Validators.required, Validators.pattern(/^([ \u00c0-\u01ffa-zA-Z'\-])+$/)]],
       campo3: ['', [Validators.required]],
-      campo4: ['', [Validators.required, Validators.pattern('^[A-Za-z0-9 ]+$')]],
-      campo5: ['', [Validators.required, Validators.pattern('^[A-Za-z0-9 ]+$')]],
-      campo6: ['', [Validators.required, Validators.pattern('^[A-Za-z0-9 ]+$')]],
-      campo7: ['', [Validators.required, Validators.pattern('^[0-9a-zA-Z]+$')]]
+      campo4: ['', [Validators.required, Validators.pattern(/^([ \u00c0-\u01ffa-zA-Z'\-])+$/)]],
+      campo5: ['', [Validators.required, Validators.pattern(/^([ \u00c0-\u01ffa-zA-Z'\-])+$/)]],
+      campo6: ['', [Validators.required, Validators.pattern(/^IT[ ]?\d{2}[ ]?[A-Z][ ]?\d{5}[ ]?\d{5}[ ]?[0-9A-Z]{12}$/)]],
+      campo7: ['', [Validators.required, Validators.pattern(/^([ \u00c0-\u01ffa-zA-Z'\-])+$/)]]
     });
 
     this.saldoContabile = this.sc.getSaldoContabile();
