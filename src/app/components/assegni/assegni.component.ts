@@ -17,7 +17,7 @@ export class AssegniComponent implements OnInit {
   ngOnInit(): void {
 
     this.formGroup = this.fb.group({
-      campo1: ['', [Validators.required,Validators.pattern('[0-9]+')]],
+      campo1: ['', [Validators.required, Validators.pattern(/[^a-z ]*([.0-9])*\d/)]],
       campo2: ['', [Validators.required, Validators.pattern(/^([ \u00c0-\u01ffa-zA-Z'\-])+$/)]],
       campo3: ['', [Validators.required]],
       campo4: ['', [Validators.required, Validators.pattern(/^([ \u00c0-\u01ffa-zA-Z'\-])+$/)]],
