@@ -1,0 +1,15 @@
+<div class="wrap">
+    <h3>Prelievo</h3>
+    <h4>Quanto vuoi prelevare?</h4>
+    <br>
+    <form [formGroup]="formGroup">
+        <div class="input-container">
+            <label for="integeronly">Prelievo</label>
+            <p-inputNumber inputId="integeronly" formControlName="value"></p-inputNumber>
+        </div>
+        <div id="p-button" class="card flex justify-content-center">
+        <p-button label="Preleva" (onClick)="updateTotal()"></p-button>
+        </div>
+    </form>
+    <p *ngIf="prelievoEffettuato">Prelievo effettuato: il saldo contabile è {{saldoContabile | currency:"€"}} </p>
+</div>

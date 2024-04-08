@@ -1,0 +1,12 @@
+<h3>Deposita contante</h3>
+<h4>Quanto vuoi depositare?</h4>
+<form [formGroup]="formGroup">
+    <div class="input-container">
+        <label for="integeronly">Deposita contante</label>
+        <p-inputNumber inputId="integeronly" formControlName="value"></p-inputNumber>
+    </div>
+    <div id="p-button" class="card flex justify-content-center">
+    <p-button label="Deposita" (onClick)="updateTotal()"></p-button>
+    </div>
+</form>
+<p *ngIf="depositoEffettuato">Deposito effettuato: il saldo contabile è {{saldoContabile | currency:"€"}} </p>

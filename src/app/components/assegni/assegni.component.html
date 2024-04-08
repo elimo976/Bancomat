@@ -1,0 +1,38 @@
+<h3>Deposita assegni</h3>
+<h4>Riempi i seguenti campi per depositare il tuo assegno</h4>
+<form [formGroup]="formGroup">
+    <div class="input-container">
+        <label for="campo1">Importo in cifre</label>
+        <input type="number" formControlName="campo1" id="campo1">
+    </div>
+    <div class="input-container">
+        <label for="campo2">Importo in lettere</label>
+        <input type="text" formControlName="campo2" id="campo2">
+    </div>
+    <div class="input-container">
+        <label for="campo3">Data di emissione</label>
+        <input type="date" formControlName="campo3" id="campo3">
+    </div>
+    <div class="input-container">
+        <label for="campo4">Nome del beneficiario</label>
+        <input type="text" formControlName="campo4" id="campo4">
+    </div> 
+    <div class="input-container">
+        <label for="campo5">Nome della banca</label>
+        <input type="text" formControlName="campo5" id="campo5">
+    </div> 
+   <div class="input-container">
+        <label for="campo6">IBAN</label>
+        <input type="text" formControlName="campo6" id="campo6">
+    </div>  
+    <div class="input-container">
+        <label for="campo7">Causale</label>
+        <input type="text" formControlName="campo7" id="campo7">
+    </div>
+    
+    <div id="p-button" class="card flex justify-content-center">
+        <p-button label="Deposita" (onClick)="depositaButton()" [disabled]="!formGroup.valid"></p-button>
+    </div>
+  </form>
+    
+<p *ngIf="depositoEffettuato">Deposito effettuato: il saldo contabile è {{saldoContabile | currency:"€"}} </p>
